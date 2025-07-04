@@ -43,9 +43,7 @@ import ContactCard from '@/components/ContactCard.vue';
 import InputSearch from '@/components/InputSearch.vue';
 import ContactList from '@/components/ContactList.vue';
 import contactService from '@/services/contact.service';
-import { data } from 'jquery';
-import { watch } from 'vue';
-import { computed } from 'vue';
+
 export default {
     components: {
         ContactCard,
