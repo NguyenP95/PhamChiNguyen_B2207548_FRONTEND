@@ -1,26 +1,38 @@
 import createApiClient from './api.service';
 
 class ContactService {
-    constructor (baseUrl = '/api/contacts') {
+    constructor(baseUrl = '/api/contacts') {
         this.api = createApiClient(baseUrl);
     }
+
     async getAll() {
-        return (await this.api.get('/')).data;
+        const response = await this.api.get('/');
+        return response.data;
     }
+
     async create(data) {
-        return (await this.api.post('/'), data).data;
+        const response = await this.api.post('/', data);
+        return response.data;
     }
+
     async deleteAll() {
-        return (await this.api.delete('/')).data;
+        const response = await this.api.delete('/');
+        return response.data;
     }
+
     async get(id) {
-        return (await this.api.get(`/${id}`), data).data;
+        const response = await this.api.get(`/${id}`);
+        return response.data;
     }
-    async update() {
-        return (await this.api.put(`/${id}`), data).data;
+
+    async update(id, data) {
+        const response = await this.api.put(`/${id}`, data);
+        return response.data;
     }
+
     async delete(id) {
-        return (await this.api.delete(`/${id}`)).data;
+        const response = await this.api.delete(`/${id}`);
+        return response.data;
     }
 }
 
